@@ -1,28 +1,27 @@
+from PIL import Image
+from PIL import ImageDraw
+from PIL import ImageFont
 import time
+
+from firob.core.worker.worker import Worker
+from robscreen import constants
+from robscreen.pages.acceuil import Acceuil
 
 import robscreen.core.bakebit_128_64_oled as oled
 
-from PIL import Image
-from PIL import ImageFont
-from PIL import ImageDraw
-
-
-from firob.core.worker.worker import Worker
-from robscreen.pages.acceuil import Acceuil
-from robscreen import constants
 
 class Screen(Worker):
 
     def __init__(self):
         Worker.__init__(self, 0.1)
 
-        oled.init()                  #initialze SEEED OLED display
-        oled.clearDisplay()          #clear the screen and set start position to top left corner
-        oled.setNormalDisplay()      #Set display to normal mode (i.e non-inverse mode)
-        oled.setPageMode()           #Set addressing mode to Page Mode
+        oled.init()  # initialze SEEED OLED display
+        oled.clearDisplay()  # clear the screen and set start position to top left corner
+        oled.setNormalDisplay()  # Set display to normal mode (i.e non-inverse mode)
+        oled.setPageMode()  # Set addressing mode to Page Mode
 
-        self.width=128
-        self.height=64
+        self.width = 128
+        self.height = 64
 
         time.sleep(10)
 
@@ -42,7 +41,4 @@ class Screen(Worker):
     def newPage(self, numero):
         if numero == constants.PAGE_ACCEUIL:
             return Acceuil()
-        
-        
- 
  

@@ -1,7 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-
 PAGE_ACCEUIL = 100
 
 PAGE_HELP = 110
