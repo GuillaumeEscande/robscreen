@@ -6,9 +6,10 @@ from PIL import ImageFont
 
 class Page():
 
-    def __init__(self, id):
+    def __init__(self, identifier):
+        self.font = ImageFont.load_default()
         self.fontb24 = ImageFont.truetype('resources/DejaVuSansMono-Bold.ttf', 24)
-        self.__id = id
+        self.__id = identifier
 
     def print(self, draw):
         pass

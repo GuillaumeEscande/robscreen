@@ -1,6 +1,12 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
+
+WIDTH = 128
+HEIGHT = 64
+
+
+
 PAGE_ACCEUIL = 100
 
 PAGE_HELP = 110
