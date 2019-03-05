@@ -11,7 +11,7 @@ class Page():
         self.fontb24 = ImageFont.truetype('resources/DejaVuSansMono-Bold.ttf', 24)
         self.__id = identifier
 
-    def print(self, draw):
+    def draw(self, draw):
         pass
 
     def manage_signals(self, signal):

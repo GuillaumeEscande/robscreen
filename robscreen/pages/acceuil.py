@@ -8,9 +8,11 @@ from robscreen.core.page import Page
 class Acceuil(Page):
 
     def __init__(self):
-        Page.__init__(constants.PAGE_ACCEUIL)
+        Page.__init__(self, constants.PAGE_ACCEUIL)
 
-    def print(self, draw):
+    def draw(self, draw):
+        
+        print("Acceuil draw")
         draw.rectangle((0,0,constants.WIDTH,constants.HEIGHT), outline=0, fill=0)
         
         # Draw some shapes.
@@ -41,6 +43,7 @@ class Acceuil(Page):
         draw.text((x, top+20), 'World!', font=self.font, fill=255)
 
     def manage_signals(self, signal):
+        print("Acceuil manage_signals " + str(signal))
         if signal == signal.SIGUSR1:
             return constants.PAGE_ACCEUIL
         elif signal == signal.SIGUSR2:
