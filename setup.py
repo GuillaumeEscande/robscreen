@@ -19,6 +19,7 @@ setup(
         'pytest'
     ],
     install_requires=[
-        'firob'
+        'firob',
+        'smbus2'
     ]
 )

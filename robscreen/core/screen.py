@@ -11,11 +11,13 @@ from robscreen.pages.acceuil import Acceuil
 from pkg_resources import resource_filename
 
 import robscreen.core.bakebit_128_64_oled as oled
+from robscreen.core.annuaire import Annuaire
+
 
 class Screen(Worker):
 
     def __init__(self):
-        Worker.__init__(self, 1)
+        Worker.__init__(self, 0.1)
 
         print("Init Screen")
         oled.init()  # initialze SEEED OLED display
@@ -27,27 +29,26 @@ class Screen(Worker):
         image = Image.open(picture).convert('1')
         oled.drawImage(image)
         
-        self.__page = Acceuil()
+        self.__page = Annuaire.getInstance().getPage(Annuaire.PAGE_ACCEUIL)
         
-        print("Screen Image Draw")
-        
-        time.sleep(4)
-
-
+        time.sleep(1)
 
     def execute(self):
-        
-        print("Screen Execute")
         image = Image.new('1', (constants.WIDTH, constants.HEIGHT))
         draw = ImageDraw.Draw(image)
         self.__page.draw(draw)
         oled.drawImage(image)
 
-    def signal(self, signum):
-        page_num = self.__page.manage_signals(signum)
-        self.__page = self.newPage(page_num)
-
-    def newPage(self, numero):
-        if numero == constants.PAGE_ACCEUIL:
-            return Acceuil()
+    def end(self):
+        oled.clearDisplay()
+        
+    def k1(self):
+        page_num = self.__page.k1()
+        self.__page = Annuaire.getInstance().getPage(page_num)
+    def k2(self):
+        page_num = self.__page.k2()
+        self.__page = Annuaire.getInstance().getPage(page_num)
+    def k3(self):
+        page_num = self.__page.k3()
+        self.__page = Annuaire.getInstance().getPage(page_num)
  

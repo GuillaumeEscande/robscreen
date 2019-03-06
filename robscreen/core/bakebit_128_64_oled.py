@@ -37,11 +37,11 @@ THE SOFTWARE.
 '''
 
 import math
-import smbus
+import smbus2
 import struct
 import time
 
-bus = smbus.SMBus(0)
+bus = smbus2.SMBus(0)
 address = 0x3c
 addressingMode = None
 SeeedOLED_Width			 = 128  # 128 Pixels
@@ -377,7 +377,7 @@ def drawImage(image):
     # Iterate through the memory pages
     bitList = []
     pages = SeeedOLED_Height / 8
-    for page in range(pages):
+    for page in range(int(pages)):
         # Iterate through all x axis columns.
         for x in range(SeeedOLED_Width):
             # Set the bits for the column of pixels at the current position.
