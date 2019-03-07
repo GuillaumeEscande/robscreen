@@ -7,8 +7,7 @@ import time
 
 from robscreen.core.screen import Screen
 
-from robscreen.pages.acceuil import Acceuil
-from robscreen.pages.help import Help
+from robscreen.pages.home import Home
 from robscreen.pages.mode import Mode
 from robscreen.pages.param import Param
 from robscreen.pages.wifi import Wifi
@@ -43,8 +42,7 @@ def screen_button(channel):
 
 if __name__ == '__main__':
     
-    Acceuil()
-    Help()
+    Home()
     Mode()
     Param()
     Wifi()

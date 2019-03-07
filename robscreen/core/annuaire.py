@@ -5,11 +5,22 @@ class Annuaire():
     
     __instance = None
         
-    PAGE_ACCEUIL = 100
-    PAGE_HELP = 110
+    PAGE_HOME = 100
+    PAGE_HOMES_START = 110
+
     PAGE_MODE = 200
-    PAGE_PARAMS = 300
+    PAGE_MODES_DEMO = 210
+    PAGE_MODES_EXIT = 299
+
+    PAGE_PARAM = 300
+    
     PAGE_WIFI = 400
+    PAGE_WIFIS_MAISON = 410
+    PAGE_WIFIS_HOTSPOT = 420
+    PAGE_WIFIS_OFF = 430
+    PAGE_WIFIS_EXIT = 499
+
+    PAGE_DEFAULT = PAGE_HOME
     
     @staticmethod
     def getInstance():

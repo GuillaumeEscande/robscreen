@@ -6,7 +6,6 @@ import signal
 
 from firob.core.worker.worker import Worker
 from robscreen import constants
-from robscreen.pages.acceuil import Acceuil
 
 from pkg_resources import resource_filename
 
@@ -29,7 +28,7 @@ class Screen(Worker):
         image = Image.open(picture).convert('1')
         oled.drawImage(image)
         
-        self.__page = Annuaire.getInstance().getPage(Annuaire.PAGE_ACCEUIL)
+        self.__page = Annuaire.getInstance().getPage(Annuaire.PAGE_DEFAULT)
         
         time.sleep(1)
 

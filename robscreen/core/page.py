@@ -12,6 +12,7 @@ class Page():
         self.font = ImageFont.load_default()
         font_file = resource_filename('robscreen.resources', 'DejaVuSansMono.ttf')
         self.fontb20 = ImageFont.truetype(font_file, 20)
+        self.fontb30 = ImageFont.truetype(font_file, 30)
         self.__id = identifier
         Annuaire.getInstance().addPage(self.__id, self)
 

@@ -12,7 +12,7 @@ from PIL import Image
 class Param(Page):
 
     def __init__(self):
-        Page.__init__(self, Annuaire.PAGE_PARAMS)
+        Page.__init__(self, Annuaire.PAGE_PARAM)
 
     def draw(self, draw):
         picture = resource_filename('robscreen.resources', 'params.png')
@@ -23,6 +23,6 @@ class Param(Page):
     def k1(self):
         return Annuaire.PAGE_MODE
     def k2(self):
-        return Annuaire.PAGE_PARAMS
+        return Annuaire.PAGE_PARAM
     def k3(self):
         return Annuaire.PAGE_WIFI
